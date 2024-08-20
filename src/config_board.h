@@ -17,5 +17,5 @@
 
 #define USB_PORT (0)
 #define BUFFER_MAX_SIZE (256)
-#define IMAGE_SIZE (200 * 150 * 2)
+#define IMAGE_SIZE (352 * 288 * 2)
 #define CHUNK_SIZE (BUFFER_MAX_SIZE)
