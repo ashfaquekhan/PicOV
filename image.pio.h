@@ -37,7 +37,7 @@ static inline pio_sm_config image_program_get_default_config(uint offset) {
     return c;
 }
 
-    void image_program_init(PIO pio, uint sm, uint offset, uint pin_base) {
+void image_program_init(PIO pio, uint sm, uint offset, uint pin_base) {
 	pio_sm_set_consecutive_pindirs(pio, sm, pin_base, 10, false);
 	pio_sm_config c = image_program_get_default_config(offset);
 	sm_config_set_in_pins(&c, pin_base);

@@ -72,27 +72,18 @@ pico_sdk_init()
 # Add executable. Default name is the project name, version 0.1
 
 add_executable(PicOV
-    src/main.c
-    src/ov2640.c
-    src/usb_descriptors.c
-    src/usb_itf.c
+    main.c
+    ov2640.c
     )
 
 
 # pull in common dependencies
 target_link_libraries(PicOV 
-	pico_multicore
 	pico_stdlib
-    pico_time
-    pico_util
-    hardware_sync
-    hardware_uart
-    hardware_i2c
-    hardware_dma
-    hardware_pwm
-    hardware_irq
-    tinyusb_device
-    hardware_pio
+	hardware_dma
+	hardware_i2c
+	hardware_pio
+	hardware_pwm
 )
 
 target_include_directories(PicOV PRIVATE 
@@ -105,5 +96,3 @@ endif()
 
 # create map/bin/hex file etc.
 pico_add_extra_outputs(PicOV)
-
-# add url via pico_set_program_url
